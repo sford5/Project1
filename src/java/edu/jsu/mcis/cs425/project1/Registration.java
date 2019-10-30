@@ -37,7 +37,12 @@ public class Registration extends HttpServlet {
 
             parameter = request.getParameter("search");
             
+            
+
+                 
             query = "SELECT * FROM registrations WHERE sessionID = ?";
+            
+            
             
             pstatement = connection.prepareStatement(query);
             pstatement.setString(1, parameter);
@@ -87,7 +92,7 @@ public class Registration extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+     
         doGet(request, response);
         
     }
