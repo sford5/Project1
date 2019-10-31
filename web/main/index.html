@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+
+<html>
+
+   <head>
+
+      <title>Project #1</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <script type="text/javascript" src="libraries/jquery-3.4.1.min.js"></script>
+      <script type="text/javascript" src="libraries/Project1.js"></script>
+
+   </head>
+
+   <body>
+
+      <form name="searchform" id="searchform" onsubmit="return Project1.submitSearchForm();">
+
+         <fieldset>
+             
+         
+
+            <label for="sessionid">Select Session:</label>
+            <input type="text" name="sessionid" id="sessionid">
+            <input type="submit" value="Submit" >
+
+          
+
+         </fieldset>
+
+      </form>
+
+       <div id="resultsarea">
+           
+           <p id="version"></p>
+       </div>
+
+      <script type="text/javascript">
+         $(document).ready( Project1.init );
+
+      </script>
+
+   </body>
+
+</html>
+
+
+

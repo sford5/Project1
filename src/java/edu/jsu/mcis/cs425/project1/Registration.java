@@ -25,6 +25,7 @@ public class Registration extends HttpServlet {
         ResultSet resultset = null;
         
         String query;
+      
         String parameter;
         String table = "";
         
@@ -34,19 +35,19 @@ public class Registration extends HttpServlet {
             
             db = new Database();
             connection = db.getConnection();
-
-            parameter = request.getParameter("search");
             
+           
             
-
+            parameter = request.getParameter("sessionid");
+            
                  
-            query = "SELECT * FROM registrations WHERE sessionID = ?";
+            query = "SELECT * FROM registrations WHERE sessionid = '" + parameter + "'";;
             
             
             
             pstatement = connection.prepareStatement(query);
-            pstatement.setString(1, parameter);
-            
+        
+            //pstatement.setString(1, parameter);
             hasresults = pstatement.execute();
             
             while ( hasresults || pstatement.getUpdateCount() != -1 ) {
